@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Skill;
 use App\Career;
 use App\Education;
+use App\User;
 
 class Resume extends Model
 {
@@ -36,5 +37,10 @@ class Resume extends Model
     public function educations()
     {
         return $this->hasMany(Education::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

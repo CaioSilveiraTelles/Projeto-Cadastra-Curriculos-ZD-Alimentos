@@ -15,6 +15,7 @@ class CreateResumesTable extends Migration
     {
         Schema::create('resumes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('email');
             $table->date('birth');
             $table->string('name');
@@ -23,6 +24,7 @@ class CreateResumesTable extends Migration
             $table->longText('cover_letter')->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
