@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,10 +25,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function updateLocale($locale)
     {
         $user = Auth::user();
+        $user->locale = $locale;
+        $user->save();
         \App::setLocale($user->locale);
-        return view('home');
+        return redirect()->route('home');
     }
 }

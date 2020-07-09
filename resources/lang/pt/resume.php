@@ -22,5 +22,8 @@ return [
         'plural' => 'Idiomas',
         'singular' => 'Idioma.',
     ],
+    'no_resume' => 'Nenhum currículo foi encontrado!',
+    'resumes' => 'Lista de currículos'
+
 
 ];
