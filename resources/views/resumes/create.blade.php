@@ -6,8 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    {{ __('resume.resumes') }}
-                    <a href="#" class="btn btn-success float-right">{{ __('general.new_resume') }}</a>
+                    {{ __('general.new_resume') }}
                 </div>
 
                 <div class="card-body">
@@ -17,7 +16,6 @@
                         </div>
                     @endif
 
-                    {{ __('resume.no_resume') }}
                 </div>
             </div>
         </div>

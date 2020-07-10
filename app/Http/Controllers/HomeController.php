@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Resume;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,7 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         \App::setLocale($user->locale);
-        return view('home');
+        $resumes = Resume::where('user_id', $user->id);
+        return view('home', compact('resumes'));
     }
 }
