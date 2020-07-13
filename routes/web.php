@@ -20,3 +20,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/update-locale/{locale}', 'UserController@updateLocale')->name('update-locale');
+Route::get('/resume', 'ResumeController@create')->name('resume.create');
+Route::get('/resume/{id}', 'ResumeController@edit')->name('resume.edit');
+Route::post('/resume', 'ResumeController@store')->name('resume.store');
+Route::post('/resume/update', 'ResumeController@update')->name('resume.update');
+Route::get('/resumes', 'ResumeController@resumes')->name('resumes');

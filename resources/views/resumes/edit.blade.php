@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    {{ __('general.new_resume') }}
+                    {{ __('general.edit_resume') }}
                 </div>
 
                 <div class="card-body">
@@ -21,7 +21,7 @@
                         </div>
                     @endif
                     <hr>
-                @include('resumes._form',['method' => 'post', 'routes' => 'resume.store', 'submit' => __('general.save')])
+                @include('resumes._form',['method' => 'post', 'routes' => 'resume.update', 'submit' => __('general.save')])
                 </div>
             </div>
         </div>

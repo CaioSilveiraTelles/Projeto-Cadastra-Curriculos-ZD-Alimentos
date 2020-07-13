@@ -29,7 +29,7 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         \App::setLocale($user->locale);
-        $resumes = Resume::where('user_id', $user->id);
+        $resumes = Resume::where('user_id', $user->id)->get();
         return view('home', compact('resumes'));
     }
 }
