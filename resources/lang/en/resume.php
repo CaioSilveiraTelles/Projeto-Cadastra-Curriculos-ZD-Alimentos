@@ -12,6 +12,7 @@ return [
     'city' => 'City',
     'country' => 'Country',
     'cover_letter' => 'Cover Letter',
+    'cover_letter_hint' => 'Tell about yourself',
     'birth' => 'Birth',
     'school' => 'School',
     'skills' => [

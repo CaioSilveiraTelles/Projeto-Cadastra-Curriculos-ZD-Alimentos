@@ -13,4 +13,12 @@ return [
     'confirm_password' => 'Confirme a senha',
     'email_address' => 'E-Mail',
     'new_resume' => 'Criar Currículo',
+    'edit_resume' => 'Editar Currículo',
+    'save' => 'Salvar',
+    'back' => 'Voltar',
+    'edit' => 'Editar',
+    'print' => 'Imprimir',
+    'close_modal' => 'Fechar',
+    'last_update' => 'Última atualização',
+    'error_insert' => 'Falha ao armazenar informações',
 ];
