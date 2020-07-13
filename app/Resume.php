@@ -8,6 +8,7 @@ use App\Skill;
 use App\Career;
 use App\Education;
 use App\User;
+use App\Language;
 
 class Resume extends Model
 {
@@ -21,12 +22,17 @@ class Resume extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'email', 'birth', 'name', 'nationality', 'phone', 'cover_letter'
+        'id', 'email', 'birth', 'name', 'nationality', 'phone', 'cover_letter', 'user_id'
     ];
 
     public function skills()
     {
         return $this->belongsToMany(Skill::class);
+    }
+
+    public function languages()
+    {
+        return $this->belongsToMany(Language::class);
     }
 
     public function careers()
