@@ -25,4 +25,12 @@ class Education extends Model
     {
         return $this->belongsTo(Resume::class);
     }
+
+    public function getBeginAttribute($value){
+        return substr($value, 3);
+    }
+
+    public function getEndAttribute($value){
+        return substr($value ?? '123'.__('resume.current'), 3);
+    }
 }

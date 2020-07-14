@@ -25,3 +25,6 @@ Route::get('/resume/{id}', 'ResumeController@edit')->name('resume.edit');
 Route::post('/resume', 'ResumeController@store')->name('resume.store');
 Route::post('/resume/update', 'ResumeController@update')->name('resume.update');
 Route::get('/resumes', 'ResumeController@resumes')->name('resumes');
+Route::post('/resume/education', 'EducationController@store')->name('resume.education.store');
+Route::get('/resume/education/{id}', 'EducationController@edit');//->name('resume.education.edit');
+Route::post('/resume/career', 'ResumeController@store_career')->name('resume.career.save');

@@ -42,7 +42,7 @@ class Resume extends Model
 
     public function educations()
     {
-        return $this->hasMany(Education::class);
+        return $this->hasMany(Education::class)->orderBy('begin');
     }
 
     public function user()

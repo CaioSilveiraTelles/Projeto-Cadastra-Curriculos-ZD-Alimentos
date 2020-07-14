@@ -1,3 +1,6 @@
+@if(isset($resume->id))
+    @include('resumes.modals._education')
+@endif
 <form action="{{ route($routes, $resume->id ?? null)}}" method="post" class="needs-validation" name="save_resume" id="save_resume" style="display: inline">
     @csrf
     @method($method)
@@ -34,9 +37,8 @@
 
     <hr class="mb-4">
     @if(isset($resume->id))
-        @include('resumes.modals._education')
         @include('resumes._education')
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#educationModal">
+        <button type="button" class="btn btn-primary float-right" onclick="create_education();">
             <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
         <hr class="mb-4">
@@ -52,3 +54,5 @@
         </div>
     </div>
 </form>
+
+

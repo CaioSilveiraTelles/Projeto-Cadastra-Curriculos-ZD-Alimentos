@@ -61,10 +61,12 @@ class ResumeController extends Controller
         
     }
 
+    
+
     public function resumes()
     {
         
-        dd(Resume::all());
+        dd(Resume::with(['educations'])->get());
         
     }
 }
