@@ -51261,6 +51261,10 @@ if (document.querySelectorAll(".date")) {
   VMasker(document.querySelectorAll(".date")).maskPattern("99/99/9999");
 }
 
+if (document.querySelectorAll(".month_year")) {
+  VMasker(document.querySelectorAll(".month_year")).maskPattern("99/9999");
+}
+
 function inputHandler(masks, max, event) {
   var c = event.target;
   var v = c.value.replace(/\D/g, '');
