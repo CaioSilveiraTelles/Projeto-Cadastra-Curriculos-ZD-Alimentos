@@ -81,5 +81,22 @@
             @yield('content')
         </main>
     </div>
+    @yield('scripts')
+
+    @yield('inline-scripts')
+    <footer class="footer page-footer font-small blue pt-4">
+        <hr>
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="#" target="_blank"> Guilherme Dambros</a>&nbsp;
+            <div class="social-div">
+                <a href="https://github.com/guilhermedambros" target="_blank"><i id="social-fb" class="fa fa-github social"></i></a>
+                <a href="https://www.facebook.com/guiliDambros" target="_blank"><i id="social-fb" class="fa fa-facebook-square social"></i></a>
+                <a href="https://www.instagram.com/guilherme.dambross/" target="_blank"> <i id="social-ig" class="fa fa-instagram social" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com/channel/UCoivU2hwJ2pBemXxe0hDs6A?view_as=subscriberinstagram guilherme dambros
+                " target="_blank"> <i id="social-yt" class="fa fa-youtube-play social" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/guilherme-dambros-8944277b/"><i id="social-in" class="fa fa-linkedin social"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
