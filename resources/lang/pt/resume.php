@@ -14,7 +14,12 @@ return [
     'cover_letter' => 'Apresentação',
     'cover_letter_hint' => 'Conte mais sobre você, se desejar',
     'birth' => 'Nascimento',
+    'begin' => 'Início',
+    'end' => 'Fim',
+    'course' => 'Curso',
+    'end_place_holder' => 'Vazio caso não concluído',
     'school' => 'Escola',
+    'local' => 'Local',
     'skills' => [
         'plural' => 'Habilidade',
         'singular' => 'Habilidades.',

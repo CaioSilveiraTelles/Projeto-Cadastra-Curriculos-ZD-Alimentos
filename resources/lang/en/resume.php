@@ -14,7 +14,12 @@ return [
     'cover_letter' => 'Cover Letter',
     'cover_letter_hint' => 'Tell about yourself',
     'birth' => 'Birth',
+    'begin' => 'Begin',
+    'end' => 'End',
+    'course' => 'Course',
+    'end_place_holder' => 'Empty if not finished',
     'school' => 'School',
+    'local' => 'Local',
     'skills' => [
         'plural' => 'Skills',
         'singular' => 'Skill.',
