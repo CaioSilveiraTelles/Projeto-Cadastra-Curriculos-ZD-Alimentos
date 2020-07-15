@@ -18,11 +18,19 @@ class Career extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'resume_id', 'company', 'begin', 'end', 'role' ,'responsibilities', 'city', 'country', 'state' /*RS - RJ...*/
+        'id', 'resume_id', 'company', 'begin', 'end', 'role' ,'responsabilities', 'city', 'country', 'state' /*RS - RJ...*/
     ];
 
     public function resume()
     {
         return $this->belongsTo(Resume::class);
+    }
+
+    public function getBeginAttribute($value){
+        return substr($value, 3);
+    }
+
+    public function getEndAttribute($value){
+        return substr($value ?? '123'.__('resume.current'), 3);
     }
 }

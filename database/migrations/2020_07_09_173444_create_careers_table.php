@@ -18,9 +18,9 @@ class CreateCareersTable extends Migration
             $table->foreignId('resume_id');
             $table->string('company');
             $table->date('begin');
-            $table->date('end');
+            $table->date('end')->nullable();
             $table->string('role');
-            $table->longText('responsibilities');
+            $table->longText('responsabilities');
             $table->string('city');
             $table->string('country');
             $table->string('state');
