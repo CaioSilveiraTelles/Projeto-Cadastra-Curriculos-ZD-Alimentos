@@ -31,4 +31,13 @@ class EducationController extends Controller
         $education = Education::findOrFail($id);
         return response()->json($education);
     }
+
+    public function destroy($id)
+    {
+        $user = Auth::user();
+        \App::setLocale($user->locale);
+        $education = Education::findOrFail($id);
+        $education->delete();
+        return redirect()->route('resume.edit', ['id' => $education->resume_id]);
+    }
 }

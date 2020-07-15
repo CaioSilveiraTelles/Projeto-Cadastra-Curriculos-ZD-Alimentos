@@ -1,5 +1,6 @@
 @if(isset($resume->id))
     @include('resumes.modals._education')
+    @include('resumes.modals._career')
 @endif
 <form action="{{ route($routes, $resume->id ?? null)}}" method="post" class="needs-validation" name="save_resume" id="save_resume" style="display: inline">
     @csrf
@@ -34,25 +35,31 @@
                 id="cover_letter" rows="7">{{old('cover_letter') ?? $resume->cover_letter ?? ''}}</textarea>
         </div>
     </div>
-
-    <hr class="mb-4">
-    @if(isset($resume->id))
-        @include('resumes._education')
-        <button type="button" class="btn btn-primary float-right" onclick="create_education();">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <hr class="mb-4">
-        @include('resumes._career')
-        <hr class="mb-4">
-    @endif
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <a href="{{ route('home') }}" class="btn btn-primary btn-lg btn-block mb-3" type="button">{{__('general.back')}}</a>
-        </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-12 mb-3">
             <button class="btn btn-success btn-lg btn-block mb-3" type="submit">{{$submit}}</button>
         </div>
     </div>
 </form>
+    <hr class="mb-4">
+    @if(isset($resume->id))
+        @include('resumes._education')
+        <button type="button" class="btn btn-primary float-right" title="{{__('general.new').' '.__('resume.education')}}" 
+            onclick="create_education();">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button></br>
+        <hr class="mb-4">
+        @include('resumes._career')
+        <button type="button" class="btn btn-primary float-right" title="{{__('general.new').' '.__('resume.career')}}" 
+            onclick="create_career();">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button></br>
+        <hr class="mb-4">
+    @endif
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <a href="{{ route('home') }}" class="btn btn-primary btn-lg btn-block mb-3" type="button">{{__('general.back')}}</a>
+        </div>
+    </div>
 
 

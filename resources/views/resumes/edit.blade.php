@@ -21,7 +21,7 @@
                         </div>
                     @endif
                     <hr>
-                @include('resumes._form',['method' => 'post', 'routes' => 'resume.update', 'submit' => __('general.save')])
+                @include('resumes._form',['method' => 'put', 'routes' => 'resume.update', 'submit' => __('general.save')])
                 </div>
             </div>
         </div>
@@ -58,9 +58,41 @@
                 $("#educationModal").modal();
                 
             }
-            function destroy_education(){
+
+            function create_career(){
+                document.getElementById('company').value = '';
+                document.getElementById('role').value = '';
+                document.getElementById('country').value = '';
+                document.getElementById('state').value = '';
+                document.getElementById('career_end').value = '';
+                document.getElementById('career_begin').value = '';
+                document.getElementById('city').value = '';
+                document.getElementById('responsabilities').value = '';
+                document.getElementById('career_id').value = '';
+                $("#careerModal").modal();
                 
-                
+            }
+
+            function edit_career(id){
+                fetch('/resume/career/'+id, {
+                    method: 'GET',
+                }).then(res => {
+                    res.body.getReader().read().then(r => { //returns a Uint8 buffer array
+                        const result = new TextDecoder("utf-8").decode(r.value); //Decodes the buffer array into a string
+                        const re = (JSON.parse(result));
+                        console.log(re);
+                        document.getElementById('company').value = re['company'];
+                        document.getElementById('role').value = re['role'];
+                        document.getElementById('country').value = re['country'];
+                        document.getElementById('career_begin').value = re['begin'];
+                        document.getElementById('career_end').value = re['end'];
+                        document.getElementById('state').value = re['state'];
+                        document.getElementById('responsabilities').value = re['responsabilities'];
+                        document.getElementById('city').value = re['city'];
+                        document.getElementById('career_id').value = re['id'];
+                        $("#careerModal").modal();
+                    })
+                });
             }
 
     </script>

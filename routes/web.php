@@ -23,8 +23,11 @@ Route::get('/update-locale/{locale}', 'UserController@updateLocale')->name('upda
 Route::get('/resume', 'ResumeController@create')->name('resume.create');
 Route::get('/resume/{id}', 'ResumeController@edit')->name('resume.edit');
 Route::post('/resume', 'ResumeController@store')->name('resume.store');
-Route::post('/resume/update', 'ResumeController@update')->name('resume.update');
+Route::put('/resume/{id}', 'ResumeController@update')->name('resume.update');
 Route::get('/resumes', 'ResumeController@resumes')->name('resumes');
 Route::post('/resume/education', 'EducationController@store')->name('resume.education.store');
-Route::get('/resume/education/{id}', 'EducationController@edit');//->name('resume.education.edit');
-Route::post('/resume/career', 'ResumeController@store_career')->name('resume.career.save');
+Route::get('/resume/education/{id}', 'EducationController@edit');
+Route::get('/resume/career/{id}', 'CareerController@edit');
+Route::delete('/resume/education/{id}', 'EducationController@destroy')->name('resume.education.destroy');
+Route::delete('/resume/career/{id}', 'CareerController@destroy')->name('resume.career.destroy');
+Route::post('/resume/career', 'CareerController@store')->name('resume.career.store');

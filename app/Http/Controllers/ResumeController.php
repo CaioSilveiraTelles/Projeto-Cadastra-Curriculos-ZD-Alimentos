@@ -61,7 +61,27 @@ class ResumeController extends Controller
         
     }
 
-    
+    public function update(Request $request, $id)
+    {
+        $user = Auth::user();
+        $resume = Resume::findOrFail($id);
+        if($user->id != $resume->user_id)
+            return redirect()->route('login');
+
+        $resume->phone = $request->phone ?? null;    
+        $resume->cover_letter = $request->cover_letter ?? null;    
+        $resume->email = $request->email;    
+        $resume->name = $request->name;    
+        $resume->birth = $request->birth;    
+        $resume->nationality = $request->nationality;    
+        if(!is_null($request->phone))
+            $resume->phone = Helpers::removeSpecialChar($request->phone);
+          
+        \App::setLocale($user->locale);
+        if($resume->save())
+            return redirect()->route('resume.edit', ['id' => $resume->id]);
+        return back()->withInput()->with('error', __('general.error_insert'));
+    }
 
     public function resumes()
     {
