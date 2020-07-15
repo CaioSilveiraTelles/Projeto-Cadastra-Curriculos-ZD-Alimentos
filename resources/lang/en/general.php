@@ -21,4 +21,7 @@ return [
     'close_modal' => 'Close',
     'last_update' => 'Last update',
     'error_insert' => 'Error on save data',
+    'delete' => 'Remove',
+    'new' => 'New',
+    
 ];

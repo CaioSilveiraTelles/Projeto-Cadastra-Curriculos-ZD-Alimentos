@@ -21,4 +21,6 @@ return [
     'close_modal' => 'Fechar',
     'last_update' => 'Última atualização',
     'error_insert' => 'Falha ao armazenar informações',
+    'delete' => 'Excluir',
+    'new' => 'Adicionar',
 ];
