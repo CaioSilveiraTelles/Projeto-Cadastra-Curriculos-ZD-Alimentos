@@ -85,7 +85,7 @@ class ResumeController extends Controller
         $resume->languages()->sync($request->languages);
         $resume->skills()->sync($request->skills);
         if($resume->save())
-            return redirect()->route('resume.edit', ['id' => $resume->id]);
+            return redirect()->route('resume.edit', ['id' => $resume->id, '#resume_section']);
         return back()->withInput()->with('error', __('general.error_insert'));
     }
 

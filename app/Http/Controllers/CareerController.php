@@ -24,7 +24,7 @@ class CareerController extends Controller
         if(!is_null($request->end))
             $career->end = '01/'.$request->end;
         if($career->save())
-            return redirect()->route('resume.edit', ['id' => $career->resume_id]);
+            return redirect()->route('resume.edit', ['id' => $career->resume_id, '#career_section']);
         return back()->withInput()->with('error', __('general.error_insert'));
     }
     public function edit($id)
@@ -41,6 +41,6 @@ class CareerController extends Controller
         \App::setLocale($user->locale);
         $career = Career::findOrFail($id);
         $career->delete();
-        return redirect()->route('resume.edit', ['id' => $career->resume_id]);
+        return redirect()->route('resume.edit', ['id' => $career->resume_id, '#career_section']);
     }
 }

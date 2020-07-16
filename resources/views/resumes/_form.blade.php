@@ -2,6 +2,7 @@
     @include('resumes.modals._education')
     @include('resumes.modals._career')
 @endif
+<section id="resume_section"></section>
 <form action="{{ route($routes, $resume->id ?? null)}}" method="post" class="needs-validation" name="save_resume" id="save_resume" style="display: inline">
     @csrf
     @method($method)
@@ -59,11 +60,12 @@
             <i class="fa fa-plus" aria-hidden="true"></i>
         </button></br>
         <hr class="mb-4">
-    @endif
-    <div class="row">
+        <div class="row">
         <div class="col-md-12 mb-3">
-            <a href="{{ route('home') }}" class="btn btn-primary btn-lg btn-block mb-3" type="button">{{__('general.back')}}</a>
+            <a href="{{ route('home') }}" class="btn btn-primary btn-lg btn-block mb-3" type="button">{{__('general.done')}}</a>
         </div>
     </div>
+    @endif
+
 
 

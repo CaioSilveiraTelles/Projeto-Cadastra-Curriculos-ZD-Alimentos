@@ -1,4 +1,5 @@
-<h3>{{__('resume.career')}}</h3>
+<section id="career_section">
+    <h3>{{__('resume.career')}}</h3>
     @foreach($resume->careers as $career)
     <div class="card w-100 m-3 mx-auto">
         <div class="card-body">
@@ -23,3 +24,4 @@
     @if(count($resume->careers) == 0)
         <h6>{{__('general.no_career_found')}}</h6>
     @endif
+</section>

@@ -21,7 +21,7 @@ class EducationController extends Controller
         if(!is_null($request->end))
             $education->end = '01/'.$request->end;
         if($education->save())
-            return redirect()->route('resume.edit', ['id' => $education->resume_id]);
+            return redirect()->route('resume.edit', ['id' => $education->resume_id, '#education_section']);
         return back()->withInput()->with('error', __('general.error_insert'));
     }
     public function edit($id)
@@ -38,6 +38,6 @@ class EducationController extends Controller
         \App::setLocale($user->locale);
         $education = Education::findOrFail($id);
         $education->delete();
-        return redirect()->route('resume.edit', ['id' => $education->resume_id]);
+        return redirect()->route('resume.edit', ['id' => $education->resume_id, '#education_section']);
     }
 }

@@ -1,3 +1,4 @@
+<section id="education_section">
     <h3>{{__('resume.education')}}</h3>
     @foreach($resume->educations as $education)
     <div class="card w-100 m-3 mx-auto">
@@ -23,3 +24,4 @@
     @if(count($resume->educations) == 0)
         <h6>{{__('general.no_education_found')}}</h6>
     @endif
+</section>

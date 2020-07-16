@@ -6,7 +6,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    {{ __('general.edit_resume') }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ __('general.edit_resume') }}
+                        </div>
+                        <div class="col-md-6">
+                        <a href="{{ route('home') }}" class="btn btn-secondary float-right">{{__('general.back')}}</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-body">
