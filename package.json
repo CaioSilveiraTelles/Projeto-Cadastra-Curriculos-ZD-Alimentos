@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "choices.js": "^9.0.1",
         "node": "^14.5.0",
         "pikaday": "^1.8.0",
         "vanilla-masker": "^1.2.0"

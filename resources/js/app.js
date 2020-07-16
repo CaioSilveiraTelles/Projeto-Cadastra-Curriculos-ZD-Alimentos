@@ -15,6 +15,8 @@ window.Pikaday = require('pikaday');
 // https://github.com/axios/axios
 const axios = require('axios');
 
+// https://github.com/jshjohnson/Choices
+window.Choices = require('choices.js');
 
 /**
  * The following block of code may be used to automatically register your
@@ -118,4 +120,20 @@ Array.from(els).forEach((element) => {
             weekdaysShort : ['Dom','Seg','Ter','Qua','Qui','Sex','Sab']
         }
     });
+
+    
 });
+const choicesConfig = {
+    noResultsText: 'No results',
+    noChoicesText: 'No more choices',
+    itemSelectText: 'Click to select',
+    loadingText: 'Loaging...',
+    removeItemButton: false,
+};
+choicesConfig.removeItemButton = true;
+if (document.getElementById('languages')) {
+    new Choices(document.getElementById('languages'), choicesConfig);
+}
+if (document.getElementById('skills')) {
+    new Choices(document.getElementById('skills'), choicesConfig);
+}

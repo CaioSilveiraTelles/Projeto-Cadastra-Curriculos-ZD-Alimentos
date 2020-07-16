@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Resume;
 use App\Helpers;
+use App\Language;
+use App\Skill;
+
+
 class ResumeController extends Controller
 {
     /**
@@ -55,9 +59,9 @@ class ResumeController extends Controller
         \App::setLocale($user->locale);
         if($user->id != $resume->user_id)
             return redirect()->route('login');
-
-
-        return view('resumes.edit', compact('resume'));
+        $languages = Language::all();
+        $skills = Skill::all();
+        return view('resumes.edit', compact('resume', 'languages', 'skills'));
         
     }
 
@@ -78,6 +82,8 @@ class ResumeController extends Controller
             $resume->phone = Helpers::removeSpecialChar($request->phone);
           
         \App::setLocale($user->locale);
+        $resume->languages()->sync($request->languages);
+        $resume->skills()->sync($request->skills);
         if($resume->save())
             return redirect()->route('resume.edit', ['id' => $resume->id]);
         return back()->withInput()->with('error', __('general.error_insert'));
@@ -86,7 +92,7 @@ class ResumeController extends Controller
     public function resumes()
     {
         
-        dd(Resume::with(['educations'])->get());
+        dd(Resume::with(['educations', 'careers', 'languages', 'skills'])->get());
         
     }
 }

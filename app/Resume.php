@@ -29,12 +29,18 @@ class Resume extends Model
     {
         return $this->belongsToMany(Skill::class);
     }
-
+    public function getSkillIdsAttribute()
+    {
+        return $this->skills->pluck('id');
+    }
     public function languages()
     {
         return $this->belongsToMany(Language::class);
     }
-
+    public function getLanguageIdsAttribute()
+    {
+        return $this->languages->pluck('id');
+    }
     public function careers()
     {
         return $this->hasMany(Career::class)->orderBy('begin');
