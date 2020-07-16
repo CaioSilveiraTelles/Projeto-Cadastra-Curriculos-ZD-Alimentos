@@ -4,6 +4,8 @@ return [
 
     'career' => 'Carreira',
     'current' => 'Atual',
+    'at' => 'em',
+    'unemployed' => 'Sem emprego',
     'email' => 'E-mail',
     'phone' => 'Telefone',
     'nationality' => 'Nacionalidade',
@@ -16,6 +18,7 @@ return [
     'role' => 'Cargo',
     'state' => 'Estado',
     'cover_letter' => 'Apresentação',
+    'personal_statement' => 'Apresentação',
     'cover_letter_hint' => 'Conte mais sobre você, se desejar',
     'birth' => 'Nascimento',
     'begin' => 'Início',

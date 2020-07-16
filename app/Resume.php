@@ -43,12 +43,12 @@ class Resume extends Model
     }
     public function careers()
     {
-        return $this->hasMany(Career::class)->orderBy('begin');
+        return $this->hasMany(Career::class)->orderBy('begin', 'desc');
     }
 
     public function educations()
     {
-        return $this->hasMany(Education::class)->orderBy('begin');
+        return $this->hasMany(Education::class)->orderBy('begin', 'desc');
     }
 
     public function user()

@@ -8,7 +8,8 @@ use App\Resume;
 use App\Helpers;
 use App\Language;
 use App\Skill;
-
+use App\Career;
+use Carbon\Carbon;;
 
 class ResumeController extends Controller
 {
@@ -76,7 +77,7 @@ class ResumeController extends Controller
         $resume->cover_letter = $request->cover_letter ?? null;    
         $resume->email = $request->email;    
         $resume->name = $request->name;    
-        $resume->birth = $request->birth;    
+        $resume->birth = $request->birth;     
         $resume->nationality = $request->nationality;    
         if(!is_null($request->phone))
             $resume->phone = Helpers::removeSpecialChar($request->phone);
@@ -89,9 +90,21 @@ class ResumeController extends Controller
         return back()->withInput()->with('error', __('general.error_insert'));
     }
 
+    public function print($id, $font = null){
+        $font = $font ?? 'Consolas, monaco, monospace';
+        $user = Auth::user();
+        $resume = Resume::findOrFail($id);
+        \App::setLocale($user->locale);
+        if($user->id != $resume->user_id)
+            return redirect()->route('home');
+
+        $resume->age = Carbon::parse(str_replace('/', '-', $resume->birth))->age;
+        return view('print.resume', compact('resume', 'font'));
+    }
+
     public function resumes()
     {
-        
+        dd(Career::orderBy('begin', 'asc')->get());
         dd(Resume::with(['educations', 'careers', 'languages', 'skills'])->get());
         
     }

@@ -31,6 +31,7 @@ class Career extends Model
     }
 
     public function getEndAttribute($value){
-        return substr($value ?? '123'.__('resume.current'), 3);
+        return (is_null($value)) ? $value : substr($value, 3);
     }
+
 }

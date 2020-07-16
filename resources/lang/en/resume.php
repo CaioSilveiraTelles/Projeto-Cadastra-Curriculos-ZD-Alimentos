@@ -4,6 +4,8 @@ return [
 
     'career' => 'Career',
     'current' => 'Current',
+    'at' => 'at',
+    'unemployed' => 'Unemployed',
     'email' => 'E-mail',
     'phone' => 'Phone',
     'nationality' => 'Nationality',
@@ -16,6 +18,7 @@ return [
     'role' => 'Role',
     'state' => 'State',
     'cover_letter' => 'Cover Letter',
+    'personal_statement' => 'Personal Statement',
     'cover_letter_hint' => 'Tell about yourself',
     'birth' => 'Birth',
     'begin' => 'Begin',

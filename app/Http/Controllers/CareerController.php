@@ -12,7 +12,7 @@ class CareerController extends Controller
         $user = Auth::user();
         \App::setLocale($user->locale);
         $career = (is_null($request->career_id)) ? new Career() : Career::findOrFail($request->career_id);
-        $career->begin = '01/'.$request->begin;
+        $career->begin = '01-'.str_replace('/', '-', $request->begin);
         $career->company = $request->company;
         $career->role = $request->role;
         $career->country = $request->country;
@@ -22,7 +22,7 @@ class CareerController extends Controller
         $career->resume_id = $request->resume_id;
         $career->end = null;
         if(!is_null($request->end))
-            $career->end = '01/'.$request->end;
+            $career->end = '01-'.str_replace('/', '-', $request->end);
         if($career->save())
             return redirect()->route('resume.edit', ['id' => $career->resume_id, '#career_section']);
         return back()->withInput()->with('error', __('general.error_insert'));

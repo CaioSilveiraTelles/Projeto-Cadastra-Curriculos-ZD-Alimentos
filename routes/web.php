@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/update-locale/{locale}', 'UserController@updateLocale')->name('update-locale');
 Route::get('/resume', 'ResumeController@create')->name('resume.create');
 Route::get('/resume/{id}', 'ResumeController@edit')->name('resume.edit');
+Route::get('/resume/print/{id}/font/{font}', 'ResumeController@print')->name('resume.print');
 Route::post('/resume', 'ResumeController@store')->name('resume.store');
 Route::put('/resume/{id}', 'ResumeController@update')->name('resume.update');
 Route::get('/resumes', 'ResumeController@resumes')->name('resumes');

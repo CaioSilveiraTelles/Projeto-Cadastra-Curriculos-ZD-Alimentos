@@ -16,7 +16,7 @@
             <p class="card-text">
                 {{$career->company}}
                 <a onclick="edit_career('{{$career->id}}');" class="btn btn-secondary float-right text-white">{{__('general.edit')}}</a></br>
-                {{$career->city}} | {{$career->begin}}-{{$career->end ?? __('resume.current')}}
+                {{$career->city}} | {{substr($career->begin, 3)}}-{{substr($career->end ?? '   '.__('resume.current'), 3) }}
             </p>
         </div>
     </div>

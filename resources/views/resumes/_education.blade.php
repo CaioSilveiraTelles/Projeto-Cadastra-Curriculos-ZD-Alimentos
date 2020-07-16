@@ -16,7 +16,7 @@
             <p class="card-text">
                 {{$education->school}}
                 <a onclick="edit_education('{{$education->id}}');" class="btn btn-secondary float-right text-white">{{__('general.edit')}}</a></br>
-                {{$education->local}} | {{$education->begin}}-{{$education->end ?? __('resume.current')}}
+                {{$education->local}} | {{substr($education->begin, 3)}}-{{substr($education->end ?? '   '.__('resume.current'), 3)}}
             </p>
         </div>
     </div>
