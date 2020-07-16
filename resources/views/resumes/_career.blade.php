@@ -19,5 +19,7 @@
             </p>
         </div>
     </div>
-        
     @endforeach
+    @if(count($resume->careers) == 0)
+        <h6>{{__('general.no_career_found')}}</h6>
+    @endif

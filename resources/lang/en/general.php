@@ -23,5 +23,7 @@ return [
     'error_insert' => 'Error on save data',
     'delete' => 'Remove',
     'new' => 'New',
+    'no_education_found' => 'Please, click on button (+) to add a course/certification/graduation...',
+    'no_career_found' => 'Please, click on button (+) to add a professional experience.',
     
 ];

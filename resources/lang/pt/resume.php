@@ -25,8 +25,8 @@ return [
     'school' => 'Escola',
     'local' => 'Local',
     'skills' => [
-        'plural' => 'Habilidade',
-        'singular' => 'Habilidades.',
+        'plural' => 'Habilidades',
+        'singular' => 'Habilidade.',
     ],
     'languages' => [
         'plural' => 'Idiomas',

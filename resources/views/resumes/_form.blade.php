@@ -35,6 +35,10 @@
                 id="cover_letter" rows="7">{{old('cover_letter') ?? $resume->cover_letter ?? ''}}</textarea>
         </div>
     </div>
+    @if(isset($resume->id))
+        @include('resumes._language')
+        @include('resumes._skill')
+    @endif
     <div class="row">
         <div class="col-md-12 mb-3">
             <button class="btn btn-success btn-lg btn-block mb-3" type="submit">{{$submit}}</button>

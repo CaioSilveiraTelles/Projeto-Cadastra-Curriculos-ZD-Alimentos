@@ -19,5 +19,7 @@
             </p>
         </div>
     </div>
-        
     @endforeach
+    @if(count($resume->educations) == 0)
+        <h6>{{__('general.no_education_found')}}</h6>
+    @endif
