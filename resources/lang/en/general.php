@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'app_name' => 'My Resume',
     'logout' => 'Logout',
     'login' => 'Login',
     'register' => 'Register',
@@ -23,6 +23,7 @@ return [
     'error_insert' => 'Error on save data',
     'delete' => 'Remove',
     'new' => 'New',
+    'done' => 'Done',
     'no_education_found' => 'Please, click on button (+) to add a course/certification/graduation...',
     'no_career_found' => 'Please, click on button (+) to add a professional experience.',
     

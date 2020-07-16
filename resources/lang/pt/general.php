@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'app_name' => 'Meu Currículo',
     'logout' => 'Sair',
     'login' => 'Entrar',
     'register' => 'Registrar',
@@ -23,6 +23,7 @@ return [
     'error_insert' => 'Falha ao armazenar informações',
     'delete' => 'Excluir',
     'new' => 'Adicionar',
+    'done' => 'Concluído',
     'no_education_found' => 'Utilize o botão (+) ao lado para adicionar seus cursos/graduações/certificações...',
     'no_career_found' => 'Utilize o botão (+) ao lado para cadastrar suas experiências profissionais.',
 ];
