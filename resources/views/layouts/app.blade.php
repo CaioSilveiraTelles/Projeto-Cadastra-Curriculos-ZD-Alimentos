@@ -65,15 +65,14 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('general.logout') }}
                                     </a>
-                                    <hr class="mb-3">
-                                    <div class="text-center">
+                                    <div class="dropdown-item text-center">
                                         <a class="img-fluid rounded float-left" style="width: 50%" href="{{ route('update-locale', 'pt') }}">
                                             <img src="{{asset('images/pt-flag-icon.png')}}"/>
                                         </a>
                                         <a class="img-fluid rounded float-right" style="width: 50%" href="{{ route('update-locale', 'en') }}">
                                             <img src="{{asset('images/en-flag-icon.png')}}"/>
                                         </a>
-                                    </div>
+                                    </div></br>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
