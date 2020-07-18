@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ __('general.app_name') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center  full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -81,19 +81,19 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{__('general.app_name')}}
                 </div>
-
+"
+                <p class="text-left">Conheça esse sistema criado para você armazenar informações sobre seu currículo, como:</p>
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#">Experiência profissional</a>
+                    <a href="#">Cursos, especializações, graduações...</a>
+                    <a href="#">Informações pessoais e de apresentação</a>
+                    <a href="#">Principais habilidades</a>
+                    <a href="#">Idiomas</a>
                 </div>
+                <p class="text-left">Além disso, o sistema permite a geração do currículo em formato PDF em diferentes idiomas e fontes.</p>
+                <p class="text-left">Chega de sistemas burocráticos para preenchimento de informações sobre você, esse sistema foi feito por pessoas que gostam de praticidade.</p>
             </div>
         </div>
     </body>
