@@ -29,12 +29,15 @@
         <main class="py-4 m-xl-5">
             <div class="container" style="font-family: {{$font}};">
                 <div class="row">
-                    <div class="col-md-7 align-middle">
-                        <h1 class="float-left font-weight-bold">{{$resume->name}}</h1> </br>
-                        @if(is_null($resume->careers->first()->end))
-                        <div class="float-left font-weight-bold">{{$resume->careers->first()->role}} {{__('resume.at')}} {{$resume->careers->first()->company}}</div>
+                    <div class="col-md-7 text-left">
+                        <h1 class="float-left font-weight-bold">{{$resume->name}}</h1></br></br>
+                        @if($resume->employee())
+                            @foreach($resume->current_role() as $key => $value)
+                        {{--<div class="float-left font-weight-bold">{{$resume->careers->first()->role}} {{__('resume.at')}} {{$resume->careers->first()->company}}</div>--}}
+                        </br><p class="float-left text-left font-weight-bold">{{$value}} {{__('resume.at')}} {{$key}}</p>
+                            @endforeach
                         @else
-                        <div class="float-left font-weight-light font-italic">{{__('resume.unemployed')}}</div>
+                        </br><div class="float-left font-weight-light font-italic">{{__('resume.unemployed')}}</div>
                         @endif
                     </div>
                     <div class="col-md-5">

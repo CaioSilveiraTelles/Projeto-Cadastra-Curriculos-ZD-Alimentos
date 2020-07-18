@@ -55,4 +55,12 @@ class Resume extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function employee(){
+        return (Career::whereNull('end')->where('resume_id', $this->id)->count() > 0) ? true : false;
+    }
+
+    public function current_role(){
+        return $this->careers->whereNull('end')->pluck( 'role', 'company')->all();
+    }
 }
