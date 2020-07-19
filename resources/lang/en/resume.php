@@ -3,6 +3,8 @@
 return [
 
     'career' => 'Career',
+    'social_media' => 'Social media',
+    'social_medias' => 'Social media',
     'current' => 'Current',
     'at' => 'at',
     'unemployed' => 'Unemployed',

@@ -32,3 +32,6 @@ Route::get('/resume/career/{id}', 'CareerController@edit');
 Route::delete('/resume/education/{id}', 'EducationController@destroy')->name('resume.education.destroy');
 Route::delete('/resume/career/{id}', 'CareerController@destroy')->name('resume.career.destroy');
 Route::post('/resume/career', 'CareerController@store')->name('resume.career.store');
+Route::delete('/resume/social_midia/{id}', 'SocialMidiaController@destroy')->name('resume.social_midia.destroy');
+Route::post('/resume/social_midia', 'SocialMidiaController@store')->name('resume.social_midia.store');
+Route::get('/resume/carsocial_midiaeer/{id}', 'SocialMidiaController@edit');
