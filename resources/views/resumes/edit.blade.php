@@ -52,7 +52,7 @@
                         document.getElementById('education_id').value = re['id'];
                         $("#educationModal").modal();
                     })
-                });
+                });''
             }
 
             function create_education(){
@@ -101,6 +101,14 @@
                     })
                 });
             }
+
+            function create_social_media(){
+                document.getElementById('icon').value = '';
+                document.getElementById('link').value = '';
+                $("#socialMediaModal").modal();
+                
+            }
+
 
     </script>
 @endsection

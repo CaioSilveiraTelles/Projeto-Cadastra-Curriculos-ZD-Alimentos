@@ -1,6 +1,7 @@
 @if(isset($resume->id))
     @include('resumes.modals._education')
     @include('resumes.modals._career')
+    @include('resumes.modals._social_media')
 @endif
 <section id="resume_section"></section>
 <form action="{{ route($routes, $resume->id ?? null)}}" method="post" class="needs-validation" name="save_resume" id="save_resume" style="display: inline">
@@ -48,6 +49,12 @@
 </form>
     <hr class="mb-4">
     @if(isset($resume->id))
+        @include('resumes._social_media')
+        <button type="button" class="btn btn-primary float-right" title="{{__('general.new').' '.__('resume.social_media')}}" 
+            onclick="create_social_media();">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button></br>
+        <hr class="mb-4">
         @include('resumes._education')
         <button type="button" class="btn btn-primary float-right" title="{{__('general.new').' '.__('resume.education')}}" 
             onclick="create_education();">

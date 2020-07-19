@@ -12,20 +12,14 @@ class SocialMediaController extends Controller
     {
         $user = Auth::user();
         \App::setLocale($user->locale);
-        $social_media = (is_null($request->social_media_id)) ? new SocialMedia() : SocialMedia::findOrFail($request->social_media_id);
+        $social_media = new SocialMedia();
         $social_media->description = $request->description ?? null;
         $social_media->link = $request->link;
         $social_media->icon = $request->icon;
-        if($edsocial_mediaucation->save())
+        $social_media->resume_id = $request->resume_id;
+        if($social_media->save())
             return redirect()->route('resume.edit', ['id' => $social_media->resume_id, '#social_media_section']);
         return back()->withInput()->with('error', __('general.error_insert'));
-    }
-    public function edit($id)
-    {
-        $user = Auth::user();
-        \App::setLocale($user->locale);
-        $education = SocialMedia::findOrFail($id);
-        return response()->json($education);
     }
 
     public function destroy($id)

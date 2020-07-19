@@ -9,6 +9,7 @@ use App\Career;
 use App\Education;
 use App\User;
 use App\Language;
+use App\SocialMedia;
 
 class Resume extends Model
 {
@@ -49,6 +50,11 @@ class Resume extends Model
     public function educations()
     {
         return $this->hasMany(Education::class)->orderBy('begin', 'desc');
+    }
+
+    public function social_medias()
+    {
+        return $this->hasMany(SocialMedia::class);
     }
 
     public function user()

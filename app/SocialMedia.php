@@ -10,6 +10,7 @@ class SocialMedia extends Model
 {
     use SoftDeletes;
 
+    public $table = 'social_medias';
     protected $dates = ['deleted_at', 'created_at', 'updated_at'];
     
     /**
@@ -18,7 +19,7 @@ class SocialMedia extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'resume_id', 'link', 'description', 'icon'/
+        'id', 'resume_id', 'link', 'description', 'icon',
     ];
 
     public function resume()

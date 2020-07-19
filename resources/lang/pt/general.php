@@ -27,4 +27,6 @@ return [
     'link' => 'Link',
     'no_education_found' => 'Utilize o botão (+) ao lado para adicionar seus cursos/graduações/certificações...',
     'no_career_found' => 'Utilize o botão (+) ao lado para cadastrar suas experiências profissionais.',
+    'no_social_media_found' => 'Utilize o botão (+) ao lado para cadastrar suas midias sociais.',
+    'social_media_dropdown' => 'Select',
 ];

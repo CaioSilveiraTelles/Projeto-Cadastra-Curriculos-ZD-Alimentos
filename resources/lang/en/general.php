@@ -27,5 +27,7 @@ return [
     'link' => 'Link',
     'no_education_found' => 'Please, click on button (+) to add a course/certification/graduation...',
     'no_career_found' => 'Please, click on button (+) to add a professional experience.',
+    'no_social_media_found' => 'Please, click on button (+) to add a new social media.',
+    'social_media_dropdown' => 'Escolha',
     
 ];
