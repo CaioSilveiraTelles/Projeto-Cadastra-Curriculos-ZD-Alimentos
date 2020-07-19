@@ -27,4 +27,8 @@ class SocialMedia extends Model
         return $this->belongsTo(Resume::class);
     }
 
+    public function getLinkAttribute($value){
+        return str_replace('www.', '', str_replace('//', '', str_replace('http:', '', str_replace('https:', '', $value))));
+    }
+
 }

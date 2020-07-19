@@ -22,7 +22,7 @@
                         <option value="facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</option>
                         <option value="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i>Linkedin</option>
                         <option value="twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</option>
-                        <option value="gitlab"><i class="fa fa-gitlab" aria-hidden="true"></i>Gitlab</option>
+                        <option value="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i>Google+</option>
                     </select>
                 </div>
                 <div class="col-md-9 form-group">

@@ -50,6 +50,21 @@
 
                     </div>
                 </div>
+                @if(count($resume->social_medias) > 0)
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr style="border-top: 1px dashed black">
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-md-12 text-justify">
+                    @foreach($resume->social_medias as $social_media)
+                        <spam class="">&nbsp;|&nbsp;<i class="fa fa-{{$social_media->icon}}-square" aria-hidden="true"></i>&nbsp;{{$social_media->link}}&nbsp;</spam>
+                    @endforeach 
+                    </div>       
+                </div>                  
+                @endif                
                 <div class="row">
                     <div class="col-md-12">
                         <hr style="border-top: 1px dashed black">
@@ -155,7 +170,7 @@
                     <div class="col-md-{{(count($resume->languages) > 0) ? 8 : 12}}">
                         <div class="float-left text-justify">
                             @foreach($resume->skills as $skill)
-                                 {{' - '.$skill->description.';'}}
+                                 {{' - '.$skill->description}}
                             @endforeach
                         </div>
                     </div>
