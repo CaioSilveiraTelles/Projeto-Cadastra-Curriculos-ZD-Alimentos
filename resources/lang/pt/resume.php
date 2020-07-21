@@ -3,8 +3,8 @@
 return [
 
     'career' => 'Carreira',
-    'social_medias' => 'Midias Sociais',
-    'social_media' => 'Midia Social',
+    'social_medias' => 'Mídias Sociais',
+    'social_media' => 'Mídia Social',
     'current' => 'Atual',
     'at' => 'em',
     'unemployed' => 'Sem emprego',
