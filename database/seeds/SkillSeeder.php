@@ -56,7 +56,7 @@ class SkillSeeder extends Seeder
             ['description' => 'IRPF'],
             ['description' => 'Declarações Anuais'],
             ['description' => 'ECF'],
-            ['description' => 'ECF'],
+            ['description' => 'ECD'],
             ['description' => 'Protheus'],
             ['description' => 'Totvs'],
             ['description' => 'Defis'],
