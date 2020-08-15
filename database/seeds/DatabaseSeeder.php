@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(LanguageSeeder::class);
-        //$this->call(SkillSeeder::class);
+        $this->call(LanguageSeeder::class);
+        $this->call(SkillSeeder::class);
     }
 }
